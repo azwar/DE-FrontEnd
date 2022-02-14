@@ -14,6 +14,7 @@ function scrollContainer(id, { isNegative } = {}) {
 }
 
 export default function DiscoverBlock({ text, id, data, imagesKey = 'images' }) {
+
   return (
     <div className="discover-block">
       <div className="discover-block__header">
