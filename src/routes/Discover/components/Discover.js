@@ -14,7 +14,9 @@ export default function Discover() {
 
 
   useEffect(() => {
-    fetchToken(setToken);
+    if (!token) {
+      fetchToken(setToken);
+    }
   }, [])
 
   useEffect(() => {
@@ -25,15 +27,11 @@ export default function Discover() {
     }
   }, [token])
 
-  useEffect(() => {
-    console.log('newReleases', newReleases);
-  }, [newReleases])
-
   return (
     <div className="discover">
-      <DiscoverBlock text="RELEASED THIS WEEK" id="released" data={newReleases || []} />
-      <DiscoverBlock text="FEATURED PLAYLISTS" id="featured" data={playlists || []} />
-      <DiscoverBlock text="BROWSE" id="browse" data={categories || []} imagesKey="icons" />
+      <DiscoverBlock text="RELEASED THIS WEEK" id="released" data={newReleases} />
+      <DiscoverBlock text="FEATURED PLAYLISTS" id="featured" data={playlists} />
+      <DiscoverBlock text="BROWSE" id="browse" data={categories} imagesKey="icons" />
     </div>
   )
 }

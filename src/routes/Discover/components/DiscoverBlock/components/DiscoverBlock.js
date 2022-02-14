@@ -21,7 +21,7 @@ export default function DiscoverBlock({ text, id, data, imagesKey = 'images' }) 
         <h2>{text}</h2>
         <span />
         {
-          data.length ? (
+          data?.length ? (
             <div className="animate__animated animate__fadeIn">
               <FontAwesomeIcon
                 icon={faChevronLeft}
